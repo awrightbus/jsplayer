@@ -1,0 +1,96 @@
+*{
+    margin:0px;
+    padding:0px;
+    border:0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Helvetica, sans-serif;
+    color:white;
+    margin-top: 200px;
+}
+/* using span to color artist name */
+span{
+    color:#ff0800;
+    font-weight: lighter;
+}
+
+/* creating the ui dark mode background like apple music */
+
+.player-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 400px;
+    padding-top:30px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+/* curving the image borders 
+    and add spacing between content*/
+ .img{
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    margin: 15px 0 10px 0;
+
+}
+
+/* positioning user info to the left of the container */
+.song-info{
+    display:flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 15px 20px 10px 20px;
+    line-height: 1.4rem;
+
+}
+/* styling buttons */
+.btn-wrapper{
+    padding-top:20px;
+    display: flex;
+    
+}
+
+.btn-prev{
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+
+.prev{
+    border-color: transparent;
+    background-color: #121212;
+    display: block;
+    
+}
+
+.btn-Next{
+    margin-right: 20px;
+    padding-bottom: 0px;
+    
+}
+
+.next{
+    border-color: transparent;
+    background-color: #121212;
+    display: block;
+    
+}
+
+.btn-play{
+    margin-right: 50px;
+    padding-bottom: 0px;
+}
+
+.play{
+    border-color: transparent;
+    background-color: #121212;
+    display: block;
+}
