@@ -44,29 +44,47 @@ const mySongs = [
     }
 ]
 
-//logic for what to do when it goes past the last element
 let next = 0;
+//initilize code 
+init = () => {
+    image.src = mySongs[next].image;
+    song.textContent = mySongs[next].song;
+    artist.textContent = mySongs[next].artist;
+};
+
+init();
+
 
 nextSong = () => {
+
+    if(next === mySongs.length ){
+        next = 0;
+    }
+
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
-    console.log(next,"forward");
     next++;
-    
+    console.log(next,"for index");
+    console.log(mySongs.length,"song length");
+        
 }
-    
+
+
 prevSong = () => {
+
+    if(next === mySongs.length ){
+        next = 5;
+    }
+
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
-    next--;
-    console.log(next,"back");
-    
+    console.log(next,"for index");
+    console.log(mySongs.length,"song length");
+    next--;  
 }
        
-
-
 
 
 prevButton.addEventListener('click', () => prevSong());
