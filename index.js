@@ -8,35 +8,35 @@ const nextButton = document.querySelector('.next-btn');
 
 const mySongs = [
     {
-        id: 1,
+        key: 1,
         image: "assets/images/dojaCat.png",
         song: "In Your Eyes",
         artist: "The Weekend",
         audio: "",
     },
     {
-        id: 2,
+        key: 2,
         image: "assets/images/bmo.jpg",
         song: "BMO",
         artist: "Ari Lennox",
         audio: "",
     },
     {
-        id: 3,
+        key: 3,
         image: "assets/images/sweetner.png",
         song: "Sweetner",
         artist: "Ariana Grande",
         audio: "",
     },
     {
-        id: 4,
+        key: 4,
         image: "assets/images/kyle.jpg",
         song: "Brown",
         artist: "Kyle Dion",
         audio: "",
     },
     {
-        id: 5,
+        key: 5,
         image: "assets/images/gonnabeme.jpeg",
         song: "It's Gonna Be Me",
         artist: "*NSYNC",
@@ -44,30 +44,29 @@ const mySongs = [
     }
 ]
 
-
-
-for(i = 0; i < mySongs.length; i++){
-    if(mySongs[i].id === 1){
-        image.src = mySongs[i].image;
-        song.textContent = mySongs[i].song;
-        artist.textContent = mySongs[i].artist;
-        
-    }
-}
+//logic for what to do when it goes past the last element
+let next = 0;
 
 nextSong = () => {
-   
-};
- 
-// prevSong = () => {
+    image.src = mySongs[next].image;
+    song.textContent = mySongs[next].song;
+    artist.textContent = mySongs[next].artist;
+    console.log(next,"forward");
+    next++;
     
-//     image.src = songs[i].image;
-//     song.textContent = songs[i].song;
-//     artist.textContent = songs[i].artist;
-//     i--;
+}
     
-// };
-   
+prevSong = () => {
+    image.src = mySongs[next].image;
+    song.textContent = mySongs[next].song;
+    artist.textContent = mySongs[next].artist;
+    next--;
+    console.log(next,"back");
+    
+}
+       
+
+
 
 
 prevButton.addEventListener('click', () => prevSong());
