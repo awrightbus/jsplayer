@@ -44,29 +44,31 @@ const mySongs = [
     }
 ]
 
-let songs = mySongs;
-let i = 0;
 
 
+for(i = 0; i < mySongs.length; i++){
+    if(mySongs[i].id === 1){
+        image.src = mySongs[i].image;
+        song.textContent = mySongs[i].song;
+        artist.textContent = mySongs[i].artist;
+        
+    }
+}
 
 nextSong = () => {
-    
-    image.src = songs[i].image;
-    song.textContent = songs[i].song;
-    artist.textContent = songs[i].artist;
-    i++;
-    
+   
 };
+ 
+// prevSong = () => {
+    
+//     image.src = songs[i].image;
+//     song.textContent = songs[i].song;
+//     artist.textContent = songs[i].artist;
+//     i--;
+    
+// };
+   
 
-prevSong = () => {
-    
-    image.src = songs[i].image;
-    song.textContent = songs[i].song;
-    artist.textContent = songs[i].artist;
-    i--;
-    
-};
-    
 
 prevButton.addEventListener('click', () => prevSong());
 nextButton.addEventListener('click', () => nextSong());  
