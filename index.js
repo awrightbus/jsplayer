@@ -1,3 +1,4 @@
+const audio = document.getElementById('audio');
 const image = document.querySelector('.img');
 const song = document.querySelector('.song');
 const artist = document.querySelector('.artist');
@@ -12,7 +13,7 @@ const mySongs = [
         image: "assets/images/dojaCat.png",
         song: "In Your Eyes",
         artist: "The Weekend",
-        audio: "",
+        audio: "assets/music/inYourEyes.mp3",
     },
     {
         key: 2,
@@ -47,6 +48,8 @@ const mySongs = [
 let next = 0;
 //initilize code 
 init = () => {
+    audio.src = mySongs[next].audio;
+    console.log(audio.src);
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
@@ -54,40 +57,37 @@ init = () => {
 
 init();
 
-
 nextSong = () => {
-
     if(next === mySongs.length){
-        next = 0;
-        
+        next = 0;      
     }
+    audio.src = mySongs[next].audio;
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
-    console.log(next);
-    next++;
-    
-
-    
-        
+    next++;          
 }
-
 
 prevSong = () => {
     if(next < 0){
         next = mySongs.length -1;
     }
+    audio.src = mySongs[next].audio;
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
     next--;
       
 }
-       
+let isPlaying = false;
 
+playSong = () => {
+   
+   audio.paused ? audio.play() : audio.pause();
+}
 
 prevButton.addEventListener('click', () => prevSong());
 nextButton.addEventListener('click', () => nextSong());  
-
+playButton.addEventListener('click', () => playSong()); 
     
 

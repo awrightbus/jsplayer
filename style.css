@@ -95,3 +95,8 @@ span{
     background-color: #121212;
     display: block;
 }
+
+/* hides the music controls  */
+audio{
+    display: none;
+}
