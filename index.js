@@ -20,28 +20,28 @@ const mySongs = [
         image: "assets/images/bmo.jpg",
         song: "BMO",
         artist: "Ari Lennox",
-        audio: "",
+        audio: "assets/music/bmo.mp3",
     },
     {
         key: 3,
         image: "assets/images/sweetner.png",
         song: "Sweetner",
         artist: "Ariana Grande",
-        audio: "",
+        audio: "assets/music/sweetner.mp3",
     },
     {
         key: 4,
         image: "assets/images/kyle.jpg",
         song: "Brown",
         artist: "Kyle Dion",
-        audio: "",
+        audio: "assets/music/brown.mp3",
     },
     {
         key: 5,
         image: "assets/images/gonnabeme.jpeg",
         song: "It's Gonna Be Me",
         artist: "*NSYNC",
-        audio: ""
+        audio: "assets/music/nsync.mp3"
     }
 ]
 
