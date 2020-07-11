@@ -57,32 +57,31 @@ init();
 
 nextSong = () => {
 
-    if(next === mySongs.length ){
+    if(next === mySongs.length){
         next = 0;
+        
     }
-
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
+    console.log(next);
     next++;
-    console.log(next,"for index");
-    console.log(mySongs.length,"song length");
+    
+
+    
         
 }
 
 
 prevSong = () => {
-
-    if(next === mySongs.length ){
-        next = 5;
+    if(next < 0){
+        next = mySongs.length -1;
     }
-
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
-    console.log(next,"for index");
-    console.log(mySongs.length,"song length");
-    next--;  
+    next--;
+      
 }
        
 
