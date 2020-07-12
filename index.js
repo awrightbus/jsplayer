@@ -62,6 +62,12 @@ nextSong = () => {
     if(next === mySongs.length){
         next = 0;      
     }
+   
+    if(!audio.paused){
+        audio.autoplay = true;
+    }else{
+        audio.autoplay = false;
+    }
     audio.src = mySongs[next].audio;
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
@@ -72,6 +78,11 @@ nextSong = () => {
 prevSong = () => {
     if(next < 0){
         next = mySongs.length -1;
+    }
+    if(!audio.paused){
+        audio.autoplay = true;
+    }else{
+        audio.autoplay = false;
     }
     audio.src = mySongs[next].audio;
     image.src = mySongs[next].image;
@@ -84,6 +95,7 @@ prevSong = () => {
 pauseSong = () => {
     audio.pause();
     const playButton = document.getElementById('pause-btn').src='assets/images/play.png';
+   
 }
 
 playSong = () => {
@@ -95,8 +107,10 @@ playSong = () => {
    }else{
        
        pauseSong();
+     
        
    }
+ 
 
 }
 
