@@ -7,6 +7,8 @@ const playButton = document.querySelector('.play-btn');
 const nextButton = document.querySelector('.next-btn');
 
 
+
+
 const mySongs = [
     {
         key: 1,
@@ -49,7 +51,6 @@ let next = 0;
 //initilize code 
 init = () => {
     audio.src = mySongs[next].audio;
-    console.log(audio.src);
     image.src = mySongs[next].image;
     song.textContent = mySongs[next].song;
     artist.textContent = mySongs[next].artist;
@@ -79,15 +80,30 @@ prevSong = () => {
     next--;
       
 }
-let isPlaying = false;
+
+pauseSong = () => {
+    audio.pause();
+    const playButton = document.getElementById('pause-btn').src='assets/images/play.png';
+}
 
 playSong = () => {
-   
-   audio.paused ? audio.play() : audio.pause();
+
+   if(audio.paused){
+       audio.play();
+       const pauseButton = document.getElementById('pause-btn').src='assets/images/pause.png';
+       
+   }else{
+       
+       pauseSong();
+       
+   }
+
 }
+
+
 
 prevButton.addEventListener('click', () => prevSong());
 nextButton.addEventListener('click', () => nextSong());  
 playButton.addEventListener('click', () => playSong()); 
-    
+ 
 

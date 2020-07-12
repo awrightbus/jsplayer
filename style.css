@@ -96,6 +96,12 @@ span{
     display: block;
 }
 
+#pause-btn{
+    border-color: transparent;
+    background-color: #121212;
+    display: block;
+}
+
 /* hides the music controls  */
 audio{
     display: none;
